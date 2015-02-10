@@ -58,7 +58,7 @@ int main( void )
 
     PrintList( L );
 
-    P = Header( L );
+    P = First( L );
     for( counter = 1 ; counter < 100 ; counter ++ )
     {
         if( counter % 2 == 0 )
@@ -97,7 +97,7 @@ int main( void )
         printf( "Number 100 is not in the list.\n\n" );
     }
 
-    P = Header( L );
+    P = First( L );
     for( counter = 0 ; counter < 100 ; counter += 2 )
     {
         printf( "%d\t" , Retrieve( P ) );
