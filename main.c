@@ -17,7 +17,7 @@ PrintList( const List L )
             P = Advance( P );
             printf( "%d\t", Retrieve( P ) );
         } while( !IsLast( P, L ) );
-        printf( "\n" );
+        printf( "\n\n" );
     }
 }
 
@@ -25,6 +25,9 @@ int main( void )
 {
     List L;
     Position P;
+
+    L = MakeEmpty( NULL );
+    P = Header( L );
 
     FILE *fp;
     fp = fopen( "data 100.txt" , "r" );
@@ -55,16 +58,25 @@ int main( void )
 
     PrintList( L );
 
-    for( counter = 1 ; counter < 100 ; counter += 2 )
+    P = Header( L );
+    for( counter = 1 ; counter < 100 ; counter ++ )
     {
-        Delete( array[ counter ] , L );
+        if( counter % 2 == 0 )
+        {
+            P = Advance( P );
+        }
+        else if( counter % 2 == 1 )
+        {
+            Delete( Retrieve( P ) , L );
+            P = Advance( P );
+        }
     }
 
     PrintList( L );
 
     for( counter = 0 ; counter < 100 ; counter++ )
     {
-        if( array[ counter ] != 100 )
+        if( Retrieve( P ) != 100 )
         {
             check = 0;
         }
@@ -73,17 +85,19 @@ int main( void )
             check = 1;
             break;
         }
+        P = Advance( P );
     }
 
     if( check == 1 )
     {
-        printf( "Number 100 is in the list.\n" );
+        printf( "Number 100 is in the list.\n\n" );
     }
     else
     {
-        printf( "Number 100 is not in the list.\n" );
+        printf( "Number 100 is not in the list.\n\n" );
     }
 
+    P = Header( L );
     for( counter = 0 ; counter < 100 ; counter += 2 )
     {
         printf( "%d\t" , Retrieve( P ) );

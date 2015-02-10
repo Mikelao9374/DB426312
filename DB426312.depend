@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1423421196 source:c:\users\mike\db426312\linklist.c
+1423511430 source:c:\users\mike\db426312\linklist.c
 	<stdio.h>
 	<stdlib.h>
 	"fatal.h"
@@ -11,7 +11,7 @@
 
 1423420623 c:\users\mike\db426312\linklist.h
 
-1423507956 source:c:\users\mike\db426312\main.c
+1423576697 source:c:\users\mike\db426312\main.c
 	<stdio.h>
 	<stdlib.h>
 	"fatal.h"
